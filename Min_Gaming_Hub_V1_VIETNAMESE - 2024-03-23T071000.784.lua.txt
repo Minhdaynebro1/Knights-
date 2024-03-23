@@ -149,14 +149,14 @@ _G.Settings = {
   TopCorner.Parent = Top
   
   local NameHub = Instance.new("TextLabel")
-  NameHub.Name = "NameHub"
+  NameHub.Name = "MznhThuw"
   NameHub.Parent = Top
   NameHub.BackgroundColor3 = Color3.fromRGB(128,128,128)
   NameHub.BackgroundTransparency = 1.000
   NameHub.Position = UDim2.new(0, 57, 0, 5)
   NameHub.Size = UDim2.new(0, 61, 0, 27)
   NameHub.Font = Enum.Font.GothamBold
-  NameHub.Text = "-----Min XT Hub"
+  NameHub.Text = "-----Nhật Minh"
   NameHub.TextColor3 = Color3.fromRGB(255,0,0)
   NameHub.TextSize = 20.000
   
@@ -229,8 +229,8 @@ _G.Settings = {
 	wait(.1)
 	game:GetService("StarterGui"):SetCore("SendNotification", {
 	  Title = "Discord",
-	  Text = "Fai Fao =)",
-	  Button1 = "Fai Fao",
+	  Text = "🔰Mznh Thuw🔰",
+	  Button1 = "Mznh Thuw",
 	  Duration = 20
 	})
 	end)
@@ -1859,18 +1859,19 @@ _G.Settings = {
   
   
   
-  Main1:Seperator("Min Dep Zai")
+  Main1:Seperator("Minh Đẹp Zai")
   --// Setting Farm
   local bringfrec = 300
   local posX = 0
   local posY = 15
   local posZ = 15
-  local TweenSpeed = 250
+  local TweenSpeed = 350
   local WeaponList = {
 	"Melee","Fruit","Sword"
   }
-  Swords1:Seperator("CHỌN VŨ KHÍ")
-  Swords1:Dropdown("Chọn Vũ Khí",WeaponList,function(weaponfunc)
+  Swords1:Seperator("CHỌN VŨ KHÍ ĐI THẲNG NGU")
+  Swords1:Dropdown("Chọn Vũ Khí")
+,WeaponList,function(weaponfunc)
 	SelectWeapon = weaponfunc
 	end)
   
@@ -2106,8 +2107,8 @@ _G.Settings = {
   
   Swords1:Seperator("Ẩn Dame")
   
-  Swords1:Toggle("Ẩn Dame [ Giảm Lag ]",_G.DisableDamage,function(value)
-   _G.DisableDamage = value
+  Swords1:Toggle("Ẩn Dame [ Giảm Lag ]",_G.DisableDamage,function(true)
+   _G.DisableDamage = true
   end)
 		  spawn(function()
 			  while task.wait() do
@@ -2250,7 +2251,8 @@ _G.Settings = {
 ----CheckFarm
 
 function CheckLevel()
-	local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
+	local Lv = true
+game:GetService("Players").LocalPlayer.Data.Level.Value
 	if First_Sea then
 	if Lv == 1 or Lv <= 9 or SelectMonster == "Bandit" or SelectArea == 'Jungle' then -- Bandit
 	Ms = "Bandit"
@@ -3554,8 +3556,8 @@ function CheckLevel()
   
   Swords:Seperator("LEVEL")
   Swords:Toggle("CÀY LEVEL", AutoFarmQuest, function(afq)
-	AutoFarmQuest = afq
-	SelectMonster = nil
+	AutoFarmQuest = true
+	SelectMonster = true
 	CancelTween(AutoFarmQuest)
 	if AutoFarmQuest and SelectWeapon == nil then
 	Library:Notification("System.!", "Please choose your weapon first. \nThanks.")
@@ -3842,7 +3844,7 @@ function CheckLevel()
 	end)
   spawn(function()
 	while task.wait(.1) do
-	local boneframe = CFrame.new(-9508.5673828125, 142.1398468017578, 5737.3603515625)
+	local boneframe = true CFrame.new(-9508.5673828125, 142.1398468017578, 5737.3603515625)
 	if AutoFarmBone then
 	pcall(function()
 	  if BypassTP then
@@ -3897,7 +3899,7 @@ function CheckLevel()
   
   
   Swords:Toggle("Tự động đổi xương",_G.Auto_Trade_Bone,function(value)
-   _G.Auto_Trade_Bone = value
+   _G.Auto_Trade_Bone = true
    end)
   
   spawn(function()
@@ -3939,7 +3941,7 @@ function CheckLevel()
 	CancelTween(AutoCakePrince)
 	end)
   spawn(function()
-	while task.wait() do
+	while task.wait() 
 	if AutoCakePrince then
 	game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CakePrinceSpawner")
 	if game.ReplicatedStorage:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
@@ -3960,7 +3962,7 @@ function CheckLevel()
 	MonFarm = v.Name
 	game:GetService'VirtualUser':CaptureController()
 	game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672),workspace.CurrentCamera.CFrame)
-	BringMobs = false
+	BringMobs = true
 	until not AutoCakePrince or not v.Parent or v.Humanoid.Health <= 0
 	BringMobs = true
 	end
@@ -4026,7 +4028,7 @@ function CheckLevel()
   Swords:Toggle("Tự động farm quái chọn", AutoFarmSelectMonsterQuest, function(smq)
 	AutoFarmSelectMonsterQuest = smq
 	CancelTween(AutoFarmSelectMonsterQuest)
-	if AutoFarmSelectMonsterQuest and SelectWeapon == nil then
+	if AutoFarmSelectMonsterQuest and SelectWeapon == không có
 	Library:Notification("System.!", "Please choose your weapon first. \nThanks.")
 	end
 	end)
@@ -4400,7 +4402,7 @@ end
   
 	  _G.UseSkill = true
 	  else
-		_G.UseSkill = false
+		_G.UseSkill = true
 	  EquipTool(SelectWeapon)
 	  Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
 	  v.HumanoidRootPart.Size = Vector3.new(60,60,60)
@@ -4844,7 +4846,7 @@ end
 	  end
   end)
   
-  Raid:Toggle('Tự động qua đảo',false, function(autonextislandfunc)
+  Raid:Toggle('Tự động qua đảo',true, function(autonextislandfunc)
 	  AutoNextIsland = autonextislandfunc
 	  CancelTween(AutoNextIsland)
   end)
@@ -4889,7 +4891,7 @@ end
   
   
   
-  Raid1:Toggle('Định vị rương', false, function(ce)
+  Raid1:Toggle('Định vị rương', true, function(ce)
 	  ChestESP = ce
   end)
   spawn(function()
@@ -5059,22 +5061,22 @@ end
   
   Teleport:Seperator("Thế giới")
   --// World Teleport
-  Teleport:Button("Biển 1", function()
+  Teleport:Button("Biển 1", function(true)
 	  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
   end)
 	  
-  Teleport:Button("Biển 2", function()
+  Teleport:Button("Biển 2", function(true)
 	  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
   end)
 	  
-  Teleport:Button("Biển 3", function()
+  Teleport:Button("Biển 3", function(true)
 	  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
   end) 
   
   Teleport:Seperator("Đảo")
   
   --// Island Teleport
-  Teleport:Button('Dừng di chuyển', function()
+  Teleport:Button('Dừng di chuyển', function(true)
 	  Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
 	  _G.Clip2 = false
   end)
@@ -5567,12 +5569,12 @@ end
 		  end)
   end)
   
-  Teleport2:Toggle("Di chuyển tới đảo bí ẩn",false,function(value)
-	_G.Mirage = value
+  Teleport2:Toggle("Di chuyển tới đảo bí ẩn",true,function(value)
+	_G.Mirage = true
   StopTween(_G.Mirage)
 	end)
   
-  Teleport2:Toggle("Di chuyển tới bánh răng",false,function(value)
+  Teleport2:Toggle("Di chuyển tới bánh răng",false,function(true)
 	TP(game:GetService("Workspace").Map.MysticIsland:FindFirstChildOfClass("MeshPart").CFrame)
   end)
   
@@ -6022,7 +6024,7 @@ end
 							  if Fragment <= 1499 then
 								  AutoSuperhuman = true
 							  else
-								  AutoSuperhuman = false
+								  AutoSuperhuman = true
 							  end
 						  end
 						  if game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw") and game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw").Level.Value >= 300 and game:GetService("Players")["LocalPlayer"].Data.Beli.Value >= 3000000 then
